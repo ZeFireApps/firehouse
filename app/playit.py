@@ -1,6 +1,6 @@
 import requests
 import json
-from flask import jsonify
+from flask import jsonify,request
 from app import app
 
 URL = 'http://127.0.0.1:6680/mopidy/rpc'
