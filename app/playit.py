@@ -51,4 +51,5 @@ def add_track(uri=None):
 def arrival():
 	add_track(request.json['uri'])
 	play()
+	print request.json
 	return jsonify({'message':'Welcome Home: '+str(request.json['username'])})
