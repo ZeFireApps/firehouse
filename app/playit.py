@@ -10,7 +10,7 @@ def play():
 	payload = {'jsonrpc':'2.0', 'id':1,'method':'core.playback.play'}
 	headers = {'content-type':'application.json'}
 
-	r=requests.post(url,data=json.dumps(payload),headers=headers)
+	r=requests.post(URL,data=json.dumps(payload),headers=headers)
 	return jsonify(r)
 
 @app.route('/pause')
@@ -18,7 +18,7 @@ def pause():
 	payload = {'jsonrpc':'2.0', 'id':1,'method':'core.playback.pause'}
 	headers = {'content-type':'application.json'}
 
-	r=requests.post(url,data=json.dumps(payload),headers=headers)
+	r=requests.post(URL,data=json.dumps(payload),headers=headers)
 	return jsonify(r)
 
 @app.route('/stop')
@@ -26,7 +26,7 @@ def stop():
 	payload = {'jsonrpc':'2.0', 'id':1,'method':'core.playback.stop'}
 	headers = {'content-type':'application.json'}
 
-	r=requests.post(url,data=json.dumps(payload),headers=headers)
+	r=requests.post(URL,data=json.dumps(payload),headers=headers)
 	return jsonify(r)	
 
 @app.route('/resume')
@@ -34,7 +34,7 @@ def resume():
 	payload = {'jsonrpc':'2.0', 'id':1,'method':'core.playback.resume'}
 	headers = {'content-type':'application.json'}
 
-	r=requests.post(url,data=json.dumps(payload),headers=headers)
+	r=requests.post(URL,data=json.dumps(payload),headers=headers)
 	return jsonify(r)
 
 @app.route('/add_track')
@@ -44,7 +44,7 @@ def add_track(uri=None):
 	payload = {'jsonrpc':'2.0', 'id':1,'method':'core.tracklist.add','params':params}
 	headers = {'content-type':'application.json'}
 
-	r=requests.post(url,data=json.dumps(payload),headers=headers)
+	r=requests.post(URL,data=json.dumps(payload),headers=headers)
 	return jsonify(r)
 
 @app.route('/arrived')
