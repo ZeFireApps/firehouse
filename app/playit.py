@@ -11,7 +11,7 @@ def play():
 	headers = {'content-type':'application.json'}
 
 	r=requests.post(URL,data=json.dumps(payload),headers=headers)
-	return jsonify(r)
+	return jsonify({'message':'playing'})
 
 @app.route('/pause')
 def pause():
@@ -19,7 +19,7 @@ def pause():
 	headers = {'content-type':'application.json'}
 
 	r=requests.post(URL,data=json.dumps(payload),headers=headers)
-	return jsonify(r)
+	return jsonify({'message':'paused'})
 
 @app.route('/stop')
 def stop():
@@ -27,7 +27,7 @@ def stop():
 	headers = {'content-type':'application.json'}
 
 	r=requests.post(URL,data=json.dumps(payload),headers=headers)
-	return jsonify(r)	
+	return jsonify({'message':'stopped'})	
 
 @app.route('/resume')
 def resume():
@@ -35,7 +35,7 @@ def resume():
 	headers = {'content-type':'application.json'}
 
 	r=requests.post(URL,data=json.dumps(payload),headers=headers)
-	return jsonify(r)
+	return jsonify({'message':'resumed'})
 
 @app.route('/add_track')
 def add_track(uri=None):
@@ -45,7 +45,7 @@ def add_track(uri=None):
 	headers = {'content-type':'application.json'}
 
 	r=requests.post(URL,data=json.dumps(payload),headers=headers)
-	return jsonify(r)
+	return jsonify({'message':'track added'})
 
 @app.route('/arrived')
 def arrival():
