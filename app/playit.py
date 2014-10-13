@@ -40,7 +40,7 @@ def resume():
 @app.route('/add_track',methods=['POST'])
 def add_track(uri=None,at_position=None):
 	if not uri: uri = request.json['uri']
-	params = {'uri':uri.'at_position':at_position}
+	params = {'uri':uri,'at_position':at_position}
 	payload = {'jsonrpc':'2.0', 'id':1,'method':'core.tracklist.add','params':params}
 	headers = {'content-type':'application.json'}
 
