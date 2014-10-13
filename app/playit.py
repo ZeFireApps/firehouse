@@ -47,8 +47,16 @@ def add_track(uri=None,at_position=None):
 	r=requests.post(URL,data=json.dumps(payload),headers=headers)
 	return jsonify({'message':'track added'})
 
+@app.route('/clear',methods=['POST'])
+def clear():
+	payload = {'jsonrpc':'2.0', 'id':1,'method':'core.tracklist.clear'}
+	headers = {'content-type':'application.json'}
+	r=requests.post(URL,data=json.dumps(payload),headers=headers)
+	return jsonify({'mesage':'tracklist cleared'})
+
 @app.route('/arrived',methods=['POST'])
 def arrival():
+	clear()
 	add_track(uri=request.json['uri'],at_position=0)
 	play()
 	print request.json
